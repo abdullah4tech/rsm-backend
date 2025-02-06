@@ -7,15 +7,16 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "latest",
     "mongoose": "^8.10.0"
   },
   "type": "module",
   "keywords": [],
-  "author": "",
+  "author": "Abdullah O. Mustapha",
   "license": "ISC",
-  "description": "",
+  "description": "Resource Management System",
   "devDependencies": {
     "nodemon": "^3.1.9"
   }
