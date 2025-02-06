@@ -3,15 +3,20 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
+    "dev": "nodemon index.js",
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "latest"
+    "dotenv": "^16.4.7",
+    "express": "latest",
+    "mongoose": "^8.10.0"
   },
   "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
