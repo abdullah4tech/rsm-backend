@@ -1,15 +1,18 @@
+import Student from "../models/Students";
+import Lecturer from '../models/Lecturers.js';
+import { hashPassword } from "../libs/hashing_pwd.js";
 
-const user = async (req, res) => {
-  const { code_id, role } = req.params
 
-  if (role === "lectuter") {
-    if (code_id === "guest") {
-      res.status(200).json({ message: "CODE staff" })
-    }
-  } else if (role === "student") {
-    if (code_id === "code202201045")
-      res.status(200).json({ message: "Abdullah" })
+
+export const userRegistration = async (req, res) => {
+  const { name, code_id, email, role, password } = req.body;
+
+  let new_password = hashPassword(password);
+  if (role === 'student') {
+    
   }
-}
 
-export default user
+} 
+
+export const userLogin = async (req, res) => { }
+ 
