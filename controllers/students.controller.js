@@ -1,4 +1,4 @@
-import Student from "../models/Students";
+import Student from "../models/Students.js";
 import Lecturer from '../models/Lecturers.js';
 import { hashPassword } from "../libs/hashing_pwd.js";
 

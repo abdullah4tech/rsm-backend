@@ -1,13 +1,10 @@
 import { Router } from "express";
-import { studentLogin } from "../controllers/student.js";
-import user from "../controllers/user.js";
 
+const router = Router();
 
-const routes = Router();
+router.use('/batches', require('../router/batches.routes'));
+router.use('/lecturers', require('../router/lecturers.routes'));
+router.use('/students', require('../router/students.routes'));
+router.use('/resources', require('../router/resources.routes'));
 
-routes.post('/login', studentLogin)
-routes.post('/register')
-routes.get('/me', user)
-
-
-export default routes;
+export default router;
