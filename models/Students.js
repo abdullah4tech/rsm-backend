@@ -8,9 +8,10 @@ const StudentSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
   password: { type: String, required: true },
   batch: { type: mongoose.Schema.Types.ObjectId, ref: 'Batch' },
-  token: { type: String, default: null },
-  createdAt: { type: Date, default: Date.now }
-});
+  token: { type: String, default: null }
+},
+  { timestamps: true }
+);
 
 const Student = mongoose.model('Student', StudentSchema);
 

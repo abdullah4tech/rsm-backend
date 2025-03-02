@@ -1,18 +1,9 @@
-import Student from "../models/Students.js";
-import Lecturer from '../models/Lecturers.js';
-import { hashPassword } from "../libs/hashing_pwd.js";
 
 
+export const createStudent = async (req, res)  => {}
 
-export const userRegistration = async (req, res) => {
-  const { name, code_id, email, role, password } = req.body;
+export const getStudents = async (req, res) => { }
 
-  let new_password = hashPassword(password);
-  if (role === 'student') {
-    
-  }
+export const updateStudent = async (req, res) => { }
 
-} 
-
-export const userLogin = async (req, res) => { }
- 
+export const deleteStudent = async (req, res) => { }

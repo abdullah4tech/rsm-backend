@@ -8,15 +8,12 @@ const ResourceSchema = new Schema({
   description: { type: String },
   resourceType: { type: String, trim: true },
   batchUpload: { type: String.Types.ObjectId, ref: 'Batch', required: true },
-  uploadedBy: { type: Schema.Types.ObjectId, ref: 'Lecturer', required: true },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
-});
+  uploadedBy: { type: Schema.Types.ObjectId, ref: 'Lecturer', required: true }
+},
+  { timestamps: true }
+);
 
-// When you create a resource this middleware is gonna get triggered. Which mean is gonna store the date you uploaded any resource
-ResourceSchema.pre('save', function (next) {
-  this.updatedAt = Date.now();
-  next();
-});
 
-export const Resource = mongoose.model('Resource', ResourceSchema);
+const Resource = mongoose.model('Resource', ResourceSchema);
+
+export default Resource;

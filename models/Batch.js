@@ -6,8 +6,12 @@ import mongoose from "mongoose";
 const BatchSchema = new Schema({
   name: { type: String, required: true, trim: true },
   batchCode: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now }
-});
+},
+  { timestamps: true }
+);
 
 
-export const Batch = mongoose.model('Batch', BatchSchema);
+const Batch = mongoose.model('Batch', BatchSchema);
+
+
+export default Batch;
