@@ -1,8 +1,10 @@
 
 
-export const createStudent = async (req, res) => {
+export const registerStudent = async (req, res) => {
   
 }
+
+export const loginStudent = async (req, res) => {}
 
 export const getStudents = async (req, res) => { }
 
