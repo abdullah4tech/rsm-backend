@@ -1,10 +1,7 @@
-import { Router } from "express";
 import authMiddleware from '../middleware/authMiddleware.js';
 import roleMiddleware from '../middleware/roleMiddleware.js';
 import { createLecturer, getLecturers, updateLecturer, deleteLecturer } from '../controllers/lecturers.controller.js';
 
-
-const router = Router();
 
 
 // Only Admin can manage lecturers

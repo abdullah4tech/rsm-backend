@@ -1,10 +1,7 @@
-import express from 'express';
 import authMiddleware from '../middleware/authMiddleware.js';
 import roleMiddleware from '../middleware/roleMiddleware.js';
 import { createBatch, getBatches, updateBatch, deleteBatch } from '../controllers/batches.controller.js';
 
-
-const router = express.Router();
 
 
 // Routes

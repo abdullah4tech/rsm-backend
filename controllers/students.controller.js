@@ -1,6 +1,8 @@
 
 
-export const createStudent = async (req, res)  => {}
+export const createStudent = async (req, res) => {
+  const stud_id = req.body.
+}
 
 export const getStudents = async (req, res) => { }
 
