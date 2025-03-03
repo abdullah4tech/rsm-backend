@@ -1,10 +1,14 @@
 import { Router } from "express";
+import batchesRoute from '../router/batches.routes.js';
+import lecturersRoute from '../router/lecturers.routes.js';
+import studentsRoute from '../router/students.routes.js';
+import resourcesRoute from '../router/resources.routes.js';
 
 const router = Router();
 
-router.use('/batches', require('../router/batches.routes.js'));
-router.use('/lecturers', require('../router/lecturers.routes.js'));
-router.use('/students', require('../router/students.routes.js'));
-router.use('/resources', require('../router/resources.routes.js'));
+router.use('/batches', batchesRoute);
+router.use('/lecturers', lecturersRoute);
+router.use('/students', studentsRoute);
+router.use('/resources', resourcesRoute);
 
 export default router;

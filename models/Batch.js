@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 // Batch Model
 // ============================
 const BatchSchema = new Schema({
-  name: { type: String, required: true, trim: true },
+  batchName: { type: String, required: true, trim: true },
   batchCode: { type: String, required: true },
 },
   { timestamps: true }

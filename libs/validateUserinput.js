@@ -1,4 +1,4 @@
-const { z } = require("zod");
+import { z } from "zod";
 
 /**
  * Common validation schemas and constraints for the Resource Management System (RSM) backend.
@@ -38,7 +38,8 @@ export const userSchema = z.object({
  * Enforces a minimum year of 2000 and prevents future years.
  */
 export const batchSchema = z.object({
-  name: z.string().min(2, "Batch name must be at least 2 characters")
+  batchName: z.string().min(2, "Batch name must be at least 2 characters"),
+  batchCode: z.string().min(2, "Batch name must be at least 2 characters")
 });
 
 // -------------------- Resource Schema --------------------
