@@ -4,17 +4,20 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
+const PROD_URI = process.env.PROD_URI;
 if (!MONGO_URI) {
   throw new Error('MONGO_URI is not defined in the environment variables');
 }
 
 const connectDB = async () => {
-  if (mongoose.connection.readyState >= 1) return;
+  if (mongoose.connection.readyState === 1) {
+    console.log('MongoDB is already connected.');
+    return;
+  }
 
   try {
-    console.log("Connecting to MongoDB...");
     
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(PROD_URI);
 
     console.log("MongoDB connected successfully.");
   } catch (error) {
@@ -23,5 +26,9 @@ const connectDB = async () => {
   }
 };
 
+// Prevent re-initialization on code reload
+mongoose.connection.once('open', () => {
+  console.log('MongoDB connection is open.');
+});
 
 export default connectDB;

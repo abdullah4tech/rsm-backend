@@ -17,14 +17,12 @@ export const hashPassword = async (password) => {
 
 export const verifyHash = async (password, hash) => {
   try {
-    if (await argon2.verify(hash, password)) {
-      console.log('Correct!')
-    } else {
-      console.log('Wrong!')
-    }
+    return await argon2.verify(hash, password); // Returns true or false
   } catch (err) {
-      console.log(err)
-  }  
-}
+    console.error(err);
+    return false; // Ensure it returns false on error
+  }
+};
+
 
 export default { hashPassword, verifyHash };
