@@ -6,11 +6,11 @@ import { registerUser, loginUser, getUsers, deleteUser, updateUser } from '../co
 const router = Router();
 
 
-router.post('/regsiter', roleMiddleware(['admin']), registerUser);
-router.post('/login', roleMiddleware(['student', 'admin']), loginUser);
-router.get('/', roleMiddleware(['admin']), getUsers);
-router.put('/:id', roleMiddleware(['admin', 'student']), updateUser);
-router.delete('/:id', roleMiddleware(['admin', 'student']), deleteUser);
+router.post('/regsiter', roleMiddleware(['sudo']), registerUser);
+router.post('/login', roleMiddleware(['student', 'admin', 'sudo']), loginUser);
+router.get('/', roleMiddleware(['sudo']), getUsers);
+router.put('/:id', roleMiddleware(['admin', 'student', 'sudo']), updateUser);
+router.delete('/:id', roleMiddleware(['admin', 'student', 'sudo']), deleteUser);
 
 export default router;
 
